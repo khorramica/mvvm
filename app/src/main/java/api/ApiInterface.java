@@ -8,6 +8,6 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-    @GET("getMovie_series.php")
+    @GET("getMovie_Series.php")
     Single<List<Movie>> getMovieList();
 }

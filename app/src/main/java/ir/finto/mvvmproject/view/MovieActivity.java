@@ -18,7 +18,7 @@ public class MovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
 
-        navController = Navigation.findNavController(this,R.id.movieFragment);
+        navController = Navigation.findNavController(this,R.id.fragment_Movie);
         NavigationUI.setupActionBarWithNavController(this,navController);
 
 
