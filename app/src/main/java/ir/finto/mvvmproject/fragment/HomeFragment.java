@@ -1,4 +1,4 @@
-package fragment;
+package ir.finto.mvvmproject.fragment;
 
 import android.os.Bundle;
 

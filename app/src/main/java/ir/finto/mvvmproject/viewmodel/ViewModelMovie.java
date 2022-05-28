@@ -7,23 +7,23 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-import api.ApiClient;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
-import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import ir.finto.mvvmproject.api.ApiClient;
 import ir.finto.mvvmproject.model.Movie;
 
 public class ViewModelMovie extends ViewModel {
 
+
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ApiClient apiClient;
+
     private MutableLiveData<List<Movie>> listMutableLiveData = new MutableLiveData<>();
 
     public MutableLiveData<List<Movie>> getListMutableLiveData() {
-
         apiClient = new ApiClient();
 
         compositeDisposable.add(apiClient.GetMovieList()
@@ -32,20 +32,17 @@ public class ViewModelMovie extends ViewModel {
                 .subscribeWith(new DisposableSingleObserver<List<Movie>>() {
                     @Override
                     public void onSuccess(@NonNull List<Movie> movies) {
-
                         listMutableLiveData.setValue(movies);
-
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        Log.d("Livedata Error", e.getMessage());
+                        Log.d("Error Live Data", e.getMessage() + "");
                     }
-                }));
+                })
+        );
         return listMutableLiveData;
-
     }
-
 
     @Override
     protected void onCleared() {

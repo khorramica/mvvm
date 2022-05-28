@@ -2,40 +2,45 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
-            name="MoviesHelper"
+            name="Movie"
             type="ir.finto.mvvmproject.model.Movie" />
+
     </data>
     
     <RelativeLayout
         android:padding="8dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="190dp">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            app:cardCornerRadius="8dp"
             android:id="@+id/card"
-            android:layout_height="180dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="8dp">
 
             <ImageView
+                android:id="@+id/img_Movie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:ImageView="@{MoviesHelper.link_img}"
-                android:id="@+id/img_Movie"/>
+                android:ImageView="@{Movie.link_img}"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
+
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{MoviesHelper.name,default=MovieName}"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:text="@{Movie.name,default=Name_Movie}"
             android:layout_below="@id/card"
-            android:layout_marginTop="16dp"/>
-    </RelativeLayout>    
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="14sp"/>
+
+    </RelativeLayout>
 </layout>
 
