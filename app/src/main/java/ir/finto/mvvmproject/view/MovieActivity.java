@@ -21,7 +21,6 @@ public class MovieActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this,R.id.fragment_Movie);
         NavigationUI.setupActionBarWithNavController(this,navController);
 
-
     }
 
     @Override
