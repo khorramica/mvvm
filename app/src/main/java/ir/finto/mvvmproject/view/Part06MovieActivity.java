@@ -9,16 +9,15 @@ import android.os.Bundle;
 
 import ir.finto.mvvmproject.R;
 
-public class MovieActivity extends AppCompatActivity {
+public class Part06MovieActivity extends AppCompatActivity {
 
     NavController navController;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie);
+        setContentView(R.layout.activity_part06_movie);
 
-        navController = Navigation.findNavController(this,R.id.fragment_Movie);
+        navController = Navigation.findNavController(this,R.id.fragment_movie);
         NavigationUI.setupActionBarWithNavController(this,navController);
 
     }

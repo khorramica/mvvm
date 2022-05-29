@@ -1,4 +1,4 @@
-package fragment;
+package ir.finto.mvvmproject.fragment;
 
 import android.os.Bundle;
 
@@ -7,28 +7,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import ir.finto.mvvmproject.R;
 
-public class DetailFragment extends Fragment {
+public class DetailMovieFragment extends Fragment {
 
-
-    public DetailFragment() {
+    public DetailMovieFragment() {
         // Required empty public constructor
     }
 
-
-    TextView txtName;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return  inflater.inflate(R.layout.fragment_detail, container, false);
-
-//        txtName = view.findViewById(R.id.txt_Name);
-//        txtName.setText(getArguments().getString("name"));
-        //return  view;
-
+        return inflater.inflate(R.layout.fragment_detail_movie, container, false);
     }
 }

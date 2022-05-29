@@ -34,7 +34,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.binding.setMoviesHelper(data.get(position));
+        holder.binding.setMovie(data.get(position));
     }
 
     @Override

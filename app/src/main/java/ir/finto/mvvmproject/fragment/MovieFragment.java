@@ -1,4 +1,4 @@
-package fragment;
+package ir.finto.mvvmproject.fragment;
 
 import android.os.Bundle;
 
@@ -9,10 +9,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,13 +29,15 @@ import ir.finto.mvvmproject.viewmodel.ViewModelMovie;
 
 public class MovieFragment extends Fragment {
 
+
     public MovieFragment() {
         // Required empty public constructor
     }
 
     FragmentMovieBinding binding;
-    RecyclerView rcViewMovie;
-    MovieAdapter movieAdapter;
+    RecyclerView recyclerView;
+
+    MovieAdapter adapterMovie;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,25 +46,29 @@ public class MovieFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_movie, container, false);
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_movie,container,false);
+        recyclerView = binding.recyclerViewMovie;
 
-        rcViewMovie = binding.rcviewMovie;
-        return binding.getRoot();
+        return  binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Log.d("KH_","public void onViewCreated");
         ViewModelMovie viewModelMovie = new ViewModelProvider(getActivity()).get(ViewModelMovie.class);
         MutableLiveData<List<Movie>> listMutableLiveData = viewModelMovie.getListMutableLiveData();
 
         listMutableLiveData.observe(getActivity(), new Observer<List<Movie>>() {
             @Override
             public void onChanged(List<Movie> movies) {
-                rcViewMovie.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
-                rcViewMovie.setHasFixedSize(true);
-                movieAdapter = new MovieAdapter(getActivity(),movies);
-                rcViewMovie.setAdapter(movieAdapter);
+//                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,true));
+                recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+                recyclerView.setHasFixedSize(true);
+
+                adapterMovie = new MovieAdapter(getActivity(),movies);
+
+                recyclerView.setAdapter(adapterMovie);
             }
         });
     }

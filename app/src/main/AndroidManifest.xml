@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MvvmProject">
         <activity
-            android:name=".view.MovieActivity"
+            android:name=".view.Part06MovieActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +22,10 @@
         </activity>
         <activity
             android:name=".view.NavigationActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".view.Part01SimpleDataBindingActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

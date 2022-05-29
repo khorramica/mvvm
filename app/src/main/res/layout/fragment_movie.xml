@@ -3,18 +3,40 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <RelativeLayout
+        android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="fragment.MovieFragment">
+        tools:context=".fragment.MovieFragment">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:id="@+id/toolbar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="Movie Fragment"/>
+
+
+        </RelativeLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_Movie"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:id="@+id/rcviewMovie"/>
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp" />
+
 
     </RelativeLayout>
 </layout>
-

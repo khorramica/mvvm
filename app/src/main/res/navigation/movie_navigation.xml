@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/movieFragment"
-        android:name="fragment.MovieFragment"
+        android:name="ir.finto.mvvmproject.fragment.MovieFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" >
         <action
-            android:id="@+id/action_movieFragment_to_movieDetailFragment"
-            app:destination="@id/movieDetailFragment" />
+            android:id="@+id/action_movieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
     </fragment>
     <fragment
-        android:id="@+id/movieDetailFragment"
-        android:name="fragment.MovieDetailFragment"
-        android:label="fragment_movie_detail"
-        tools:layout="@layout/fragment_movie_detail" >
+        android:id="@+id/detailMovieFragment"
+        android:name="ir.finto.mvvmproject.fragment.DetailMovieFragment"
+        android:label="fragment_detail_movie"
+        tools:layout="@layout/fragment_detail_movie" >
         <action
-            android:id="@+id/action_movieDetailFragment_to_movieFragment"
+            android:id="@+id/action_detailMovieFragment_to_movieFragment"
             app:destination="@id/movieFragment" />
     </fragment>
 </navigation>
