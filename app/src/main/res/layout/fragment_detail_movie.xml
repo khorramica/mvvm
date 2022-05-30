@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment.DetailMovieFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    
+    <data>
+        <variable
+            name="DetailMovie"
+            type="ir.finto.mvvmproject.model.DetailMovie" />
+    </data>
+    
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="8dp"
+        tools:context=".fragment.DetailMovieFragment">
 
-</FrameLayout>
+
+        <ImageView
+            android:id="@+id/img_Movie"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:ImageView="@{DetailMovie.link_img}"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_Movie"
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_Name"
+            android:text="@{DetailMovie.name,default=Name}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_Name"
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_description"
+            android:lineSpacingExtra="4dp"
+            android:text="@{DetailMovie.description,default=Description}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_description"
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_genre"
+            android:lineSpacingExtra="4dp"
+            android:text="@{DetailMovie.genre,default=Genre}"/>
+
+
+    </RelativeLayout>
+</layout>

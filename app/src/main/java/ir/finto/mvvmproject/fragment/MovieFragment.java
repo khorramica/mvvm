@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,10 +25,11 @@ import java.util.List;
 import ir.finto.mvvmproject.R;
 import ir.finto.mvvmproject.adapter.MovieAdapter;
 import ir.finto.mvvmproject.databinding.FragmentMovieBinding;
+import ir.finto.mvvmproject.interFace.onClickMovieListener;
 import ir.finto.mvvmproject.model.Movie;
 import ir.finto.mvvmproject.viewmodel.ViewModelMovie;
 
-public class MovieFragment extends Fragment {
+public class MovieFragment extends Fragment implements onClickMovieListener {
 
 
     public MovieFragment() {
@@ -66,10 +68,23 @@ public class MovieFragment extends Fragment {
                 recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
                 recyclerView.setHasFixedSize(true);
 
-                adapterMovie = new MovieAdapter(getActivity(),movies);
+                adapterMovie = new MovieAdapter(getActivity(),movies,MovieFragment.this::onClick);
 
                 recyclerView.setAdapter(adapterMovie);
             }
         });
+    }
+
+    @Override
+    public void onClick(Movie movie) {
+        Bundle bundle = new Bundle();
+        bundle.putString("id",movie.getId());
+        bundle.putString("name",movie.getName());
+        bundle.putString("description",movie.getDescription());
+        bundle.putString("link_img",movie.getLink_img());
+        bundle.putString("genre",movie.getGenre());
+
+        Navigation.findNavController(recyclerView).navigate(R.id.action_movieFragment_to_detailMovieFragment,bundle);
+
     }
 }

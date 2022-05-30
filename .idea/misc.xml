@@ -12,14 +12,17 @@
         <entry key="..\:/Projects/Android/MvvmProject/app/src/main/res/layout/fragment_movie.xml" value="0.2421875" />
         <entry key="..\:/Projects/Android/MvvmProject/app/src/main/res/layout/fragment_movie_detail.xml" value="0.2421875" />
         <entry key="..\:/Projects/Android/MvvmProject/app/src/main/res/layout/item_movie.xml" value="0.1" />
-        <entry key="..\:/Projects/Android/MvvmProject/app/src/main/res/layout/item_paging.xml" value="0.30787037037037035" />
         <entry key="..\:/Projects/Android/MvvmProject/app/src/main/res/layout/item_users.xml" value="0.4" />
         <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/activity_movie.xml" value="0.25815217391304346" />
         <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/activity_part06_movie.xml" value="0.25815217391304346" />
+        <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/activity_part07_view_pager.xml" value="0.33" />
+        <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/activity_part08_paging.xml" value="0.35052083333333334" />
         <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/fragment_detail.xml" value="0.17604166666666668" />
-        <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/fragment_detail_movie.xml" value="0.25815217391304346" />
+        <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/fragment_detail_movie.xml" value="0.67" />
         <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/fragment_movie.xml" value="0.21875" />
         <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/item_movie.xml" value="0.21875" />
+        <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/item_paging.xml" value="0.35052083333333334" />
+        <entry key="..\:/projects/Android/Learning/mvvm/app/src/main/res/layout/item_slider.xml" value="0.35052083333333334" />
       </map>
     </option>
   </component>

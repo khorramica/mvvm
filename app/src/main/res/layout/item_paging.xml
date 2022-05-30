@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_name"
+            android:id="@+id/txt_name_paging"
             android:text="Name"
             android:layout_toRightOf="@id/img_Profile"
             android:layout_marginTop="16dp"

@@ -12,17 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MvvmProject">
         <activity
-            android:name=".view.Part06MovieActivity"
-            android:exported="true">
+            android:name=".view.Part08PagingActivity"
+            android:exported="false" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
+            android:name=".view.Part07ViewPagerActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".view.Part06MovieActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".view.NavigationActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".view.Part01SimpleDataBindingActivity"
             android:exported="true" />

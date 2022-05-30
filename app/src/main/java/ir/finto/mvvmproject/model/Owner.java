@@ -1,10 +1,10 @@
 package ir.finto.mvvmproject.model;
 
 public class Owner {
-    private int reputation;
-    private long user_id;
-    private String user_type;
-    private String profile_image;
-    private String display_name;
-    private String link;
+    public int reputation;
+    public long user_id;
+    public String user_type;
+    public String profile_image;
+    public String display_name;
+    public String link;
 }
