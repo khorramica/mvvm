@@ -21,9 +21,10 @@ import java.util.UUID;
 import ir.finto.mvvmproject.R;
 import ir.finto.mvvmproject.RoomDB.Information;
 import ir.finto.mvvmproject.adapter.InformationAdapter;
+import ir.finto.mvvmproject.interFace.onDeleteItems;
 import ir.finto.mvvmproject.viewmodel.ViewModelRoomDB;
 
-public class Part09InformationDBActivity extends AppCompatActivity {
+public class Part09InformationDBActivity extends AppCompatActivity implements onDeleteItems {
 
     RecyclerView recyclerView;
     FloatingActionButton fab;
@@ -43,7 +44,7 @@ ViewModelRoomDB viewModelRoomDB;
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new InformationAdapter(this,informationList);
+        adapter = new InformationAdapter(this,informationList,this);
         recyclerView.setAdapter(adapter);
 
         fab = findViewById(R.id.btn_fab);
@@ -79,5 +80,10 @@ ViewModelRoomDB viewModelRoomDB;
             viewModelRoomDB.InsertInformation(information);
             Toast.makeText(this, "Saved Successfully", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onDelete(Information information) {
+        viewModelRoomDB.DeleteInformation(information);
     }
 }

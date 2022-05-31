@@ -23,7 +23,7 @@ public class ViewModelRoomDB extends AndroidViewModel {
         super(application);
 
         informationDB = InformationDB.GetInstance(application);
-        informationDao = InformationDB.informationDao();
+        informationDao = informationDB.informationDao();
         allInformation = informationDao.getAll();
     }
 
@@ -46,9 +46,29 @@ public class ViewModelRoomDB extends AndroidViewModel {
         }
     }
 
+    public class DeleteAsyncTask extends AsyncTask<Information,Void,Void>{
+
+        InformationDao informationDao;
+
+        public DeleteAsyncTask(InformationDao informationDao) {
+            this.informationDao = informationDao;
+        }
+
+        @Override
+        protected Void doInBackground(Information... information) {
+            informationDao.Delete(information[0]);
+            return null;
+        }
+    }
+
     public void InsertInformation(Information information)
     {
         new InsertAsyncTask(informationDao).execute(information);
+    }
+
+    public void DeleteInformation(Information information)
+    {
+        new DeleteAsyncTask(informationDao).execute(information);
     }
 
     @Override
