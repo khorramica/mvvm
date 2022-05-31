@@ -21,6 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_Username"
         android:layout_centerInParent="true"
+        android:backgroundTint="@color/purple_200"
+        android:textColor="#000"
+        android:text="Add"
         android:layout_marginTop="4dp" />
 
 </RelativeLayout>
