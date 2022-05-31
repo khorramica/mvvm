@@ -25,5 +25,5 @@ public interface InformationDao {
     void Update(Information information);
 
     @Delete
-    void Delete(Information information);
+    int Delete(Information information);
 }

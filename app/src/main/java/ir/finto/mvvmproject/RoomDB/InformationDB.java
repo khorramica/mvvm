@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 @Database(entities = Information.class, version = 1)
 public abstract class InformationDB extends RoomDatabase {
 
-    public static InformationDao informationDao;
+    public abstract InformationDao informationDao();
     public static InformationDB informationDB;
 
     public static InformationDB GetInstance(Context context) {
@@ -17,7 +17,7 @@ public abstract class InformationDB extends RoomDatabase {
             informationDB = Room.databaseBuilder(
                     context.getApplicationContext(),
                     InformationDB.class,
-                    "Information_DB"
+                    "INFORMATION_DB"
             ).build();
 
         return informationDB;

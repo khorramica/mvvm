@@ -1,5 +1,6 @@
 package ir.finto.mvvmproject.RoomDB;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -9,12 +10,14 @@ public class Information {
 
     @PrimaryKey
     @ColumnInfo(name = "id")
+    @NonNull
     private String id;
 
+    @NonNull
     @ColumnInfo(name = "username")
     private String username;
 
-    public Information(String id, String username) {
+    public Information(@NonNull String id,@NonNull String username) {
         this.id = id;
         this.username = username;
     }
